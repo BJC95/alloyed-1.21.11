@@ -1,0 +1,19 @@
+{
+  "item.flx_alloys.gold_powder": "Gold Powder",
+  "item.flx_alloys.iron_powder": "Iron Powder",
+  "item.flx_alloys.copper_powder": "Copper Powder",
+
+  "item.flx_alloys.rose_gold_ingot": "Rose Gold Ingot",
+  "item.flx_alloys.rose_gold_nugget": "Rose Gold Nugget",
+  "item.flx_alloys.rose_gold_blend": "Rose Gold Blend",
+  "block.flx_alloys.rose_gold_block": "Rose Gold Block",
+  "item.flx_alloys.rose_gold_sword": "Rose Gold Sword",
+  "item.flx_alloys.rose_gold_pickaxe": "Rose Gold Pickaxe",
+  "item.flx_alloys.rose_gold_axe": "Rose Gold Axe",
+  "item.flx_alloys.rose_gold_shovel": "Rose Gold Shovel",
+  "item.flx_alloys.rose_gold_hoe": "Rose Gold Hoe",
+  "item.flx_alloys.rose_gold_spear": "Rose Gold Spear",
+
+  "creativetab.flx_alloys.materials_tab": "FluxedMod; Alloyed Materials",
+  "creativetab.flx_alloys.tools_tab": "FluxedMod; Alloyed Tools"
+}
