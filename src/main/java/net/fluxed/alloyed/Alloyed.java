@@ -4,7 +4,10 @@ import com.mojang.logging.LogUtils;
 import net.fluxed.alloyed.block.ModBlocks;
 import net.fluxed.alloyed.item.ModCreativeModeTabs;
 import net.fluxed.alloyed.item.ModItems;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.scores.criteria.ObjectiveCriteria;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -13,6 +16,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.RenderTypeGroup;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
@@ -67,7 +71,6 @@ public class Alloyed {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
         }
 
         @SubscribeEvent

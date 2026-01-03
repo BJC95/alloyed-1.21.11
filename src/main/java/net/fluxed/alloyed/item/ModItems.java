@@ -23,6 +23,13 @@ import net.neoforged.neoforge.registries.DeferredRegister;
             public static final DeferredItem<Item> ROSE_GOLD_BLEND = ITEMS.registerItem("rose_gold_blend",
             Item::new, new Item.Properties());
 
+            public static final DeferredItem<Item> FLUXED_INGOT = ITEMS.registerItem("fluxed_ingot",
+            Item::new, new Item.Properties());
+            public static final DeferredItem<Item> FLUXED_NUGGET = ITEMS.registerItem("fluxed_nugget",
+            Item::new, new Item.Properties());
+            public static final DeferredItem<Item> FLUXED_BLEND = ITEMS.registerItem("fluxed_blend",
+            Item::new, new Item.Properties());
+
             public static final DeferredItem<Item> ROSE_SWORD = ITEMS.registerItem("rose_gold_sword",
                     (properties) -> new Item(properties.sword(ModToolTiers.ROSE_GOLD, 3, -2.4f)));
             public static final DeferredItem<Item> ROSE_PICKAXE = ITEMS.registerItem("rose_gold_pickaxe",
@@ -35,6 +42,21 @@ import net.neoforged.neoforge.registries.DeferredRegister;
                     (properties) -> new Item(properties.hoe(ModToolTiers.ROSE_GOLD, -1, 0)));
             public static final DeferredItem<Item> ROSE_SPEAR = ITEMS.registerItem("rose_gold_spear",
                     (properties) -> new Item(properties.spear(ModToolTiers.ROSE_GOLD, 0.85f, 0.82f,
+                            0.62f, 4.0f, 9.0f, 8.25f, 5.1f,
+                            13.75f, 4.6f)));
+
+            public static final DeferredItem<Item> FLUXED_SWORD = ITEMS.registerItem("fluxed_sword",
+                    (properties) -> new Item(properties.sword(ModToolTiers.FLUXED, 3, -2.4f)));
+            public static final DeferredItem<Item> FLUXED_PICKAXE = ITEMS.registerItem("fluxed_pickaxe",
+                    (properties) -> new Item(properties.pickaxe(ModToolTiers.FLUXED, 1, -2.8f)));
+            public static final DeferredItem<Item> FLUXED_AXE = ITEMS.registerItem("fluxed_axe",
+                    (properties) -> new Item(properties.axe(ModToolTiers.FLUXED, 5, -3f)));
+            public static final DeferredItem<Item> FLUXED_SHOVEL = ITEMS.registerItem("fluxed_shovel",
+                    (properties) -> new Item(properties.shovel(ModToolTiers.FLUXED, 1.5f, -3f)));
+            public static final DeferredItem<Item> FLUXED_HOE = ITEMS.registerItem("fluxed_hoe",
+                    (properties) -> new Item(properties.hoe(ModToolTiers.FLUXED, -1, 0)));
+            public static final DeferredItem<Item> FLUXED_SPEAR = ITEMS.registerItem("fluxed_spear",
+                    (properties) -> new Item(properties.spear(ModToolTiers.FLUXED, 0.85f, 0.82f,
                             0.62f, 4.0f, 9.0f, 8.25f, 5.1f,
                             13.75f, 4.6f)));
 

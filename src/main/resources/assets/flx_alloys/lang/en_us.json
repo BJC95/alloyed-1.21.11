@@ -14,6 +14,17 @@
   "item.flx_alloys.rose_gold_hoe": "Rose Gold Hoe",
   "item.flx_alloys.rose_gold_spear": "Rose Gold Spear",
 
+  "item.flx_alloys.fluxed_ingot": "Fluxed Ingot",
+  "item.flx_alloys.fluxed_nugget": "Fluxed Nugget",
+  "item.flx_alloys.fluxed_blend": "Fluxed Blend",
+  "block.flx_alloys.fluxed_block": "Fluxed Block",
+  "item.flx_alloys.fluxed_sword": "Fluxed Sword",
+  "item.flx_alloys.fluxed_pickaxe": "Fluxed Pickaxe",
+  "item.flx_alloys.fluxed_axe": "Fluxed Axe",
+  "item.flx_alloys.fluxed_shovel": "Fluxed Shovel",
+  "item.flx_alloys.fluxed_hoe": "Fluxed Hoe",
+  "item.flx_alloys.fluxed_spear": "Fluxed Spear",
+
   "creativetab.flx_alloys.materials_tab": "FluxedMod; Alloyed Materials",
   "creativetab.flx_alloys.tools_tab": "FluxedMod; Alloyed Tools"
 }

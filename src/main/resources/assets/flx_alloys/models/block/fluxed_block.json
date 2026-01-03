@@ -1,0 +1,70 @@
+{
+	"format_version": "1.21.11",
+    "render_type": "minecraft:cutout",
+	"credit": "Slightly Edited version of Twilight Forest's Fiery Block!",
+	"ambientocclusion": false,
+	"textures": {
+		"2": "flx_alloys:block/fluxed_block",
+		"over": "flx_alloys:block/fluxed_pattern",
+		"particle": "flx_alloys:block/fluxed_block"
+	},
+	"elements": [
+		{
+			"from": [1, 1, 1],
+			"to": [15, 15, 15],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [1, 1, 15, 15], "texture": "#2", "tintindex": 0},
+				"east": {"uv": [1, 1, 15, 15], "texture": "#2", "tintindex": 0},
+				"south": {"uv": [1, 1, 15, 15], "texture": "#2", "tintindex": 0},
+				"west": {"uv": [1, 1, 15, 15], "texture": "#2", "tintindex": 0},
+				"up": {"uv": [1, 1, 15, 15], "texture": "#2", "tintindex": 0},
+				"down": {"uv": [1, 1, 15, 15], "texture": "#2", "tintindex": 0}
+			}
+		},
+		{
+			"from": [15.99, 15.99, 15.99],
+			"to": [0.01, 0.01, 0.01],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [15.99, 15.99, 0.01, 0.01], "texture": "#over", "tintindex": 1},
+				"east": {"uv": [15.99, 15.99, 0.01, 0.01], "texture": "#over", "tintindex": 1},
+				"south": {"uv": [15.99, 15.99, 0.01, 0.01], "texture": "#over", "tintindex": 1},
+				"west": {"uv": [15.99, 15.99, 0.01, 0.01], "texture": "#over", "tintindex": 1},
+				"up": {"uv": [15.99, 15.99, 0.01, 0.01], "texture": "#over",  "tintindex": 1},
+				"down": {"uv": [15.99, 15.99, 0.01, 0.01], "texture": "#over", "tintindex": 1}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -135, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, -135, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
+}

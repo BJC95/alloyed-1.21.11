@@ -7,7 +7,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -17,7 +16,7 @@ public class ModCreativeModeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Alloyed.MOD_ID);
 
     public static final Supplier<CreativeModeTab> ALLOYED_MATERIALS_TAB = CREATIVE_MODE_TAB.register("materials_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ROSE_GOLD.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.FLUXED_INGOT.get()))
                     .title(Component.translatable("creativetab.flx_alloys.materials_tab"))
                     .displayItems((itemDisplayPerameters, output) -> {
                         output.accept(ModItems.IRON_DUST);
@@ -28,9 +27,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ROSE_GOLD_NUGGET);
                         output.accept(ModItems.ROSE_GOLD_BLEND);
                         output.accept(ModBlocks.ROSE_GOLD_BLOCK);
+
+                        output.accept(ModItems.FLUXED_INGOT);
+                        output.accept(ModItems.FLUXED_NUGGET);
+                        output.accept(ModItems.FLUXED_BLEND);
+                        output.accept(ModBlocks.FLUXED_BLOCK);
                     }).build());
     public static final Supplier<CreativeModeTab> ALLOYED_TOOLS_TAB = CREATIVE_MODE_TAB.register("tools_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ROSE_GOLD.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.FLUXED_PICKAXE.get()))
                     .title(Component.translatable("creativetab.flx_alloys.tools_tab"))
                     .displayItems((itemDisplayPerameters, output) -> {
                         output.accept(ModItems.ROSE_SWORD);
@@ -39,6 +43,13 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ROSE_SHOVEL);
                         output.accept(ModItems.ROSE_HOE);
                         output.accept(ModItems.ROSE_SPEAR);
+
+                        output.accept(ModItems.FLUXED_SWORD);
+                        output.accept(ModItems.FLUXED_PICKAXE);
+                        output.accept(ModItems.FLUXED_AXE);
+                        output.accept(ModItems.FLUXED_SHOVEL);
+                        output.accept(ModItems.FLUXED_HOE);
+                        output.accept(ModItems.FLUXED_SPEAR);
                     }).build());
 
                         public static void register(IEventBus eventBus) {

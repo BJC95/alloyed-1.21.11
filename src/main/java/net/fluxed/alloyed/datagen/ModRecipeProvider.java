@@ -38,13 +38,29 @@ public class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes() {
+        // Dust Grinding
+        stonecutting(
+                RecipeCategory.TOOLS,
+                ModItems.IRON_DUST, Items.IRON_INGOT, 1, output);
+        stonecutting(
+                RecipeCategory.TOOLS,
+                ModItems.COPPER_DUST, Items.COPPER_INGOT, 1, output);
+        stonecutting(
+                RecipeCategory.TOOLS,
+                ModItems.GOLD_DUST, Items.GOLD_INGOT, 1, output);
+        stonecutting(
+                RecipeCategory.TOOLS,
+                ModItems.ROSE_GOLD_BLEND, ModItems.ROSE_GOLD, 1, output);
+        stonecutting(
+                RecipeCategory.TOOLS,
+                ModItems.FLUXED_BLEND, ModItems.FLUXED_INGOT, 1, output);
+        // Rose Gold Converting
         shapeless(RecipeCategory.TOOLS, ModItems.ROSE_GOLD_BLEND.get(), 4)
                 .requires(ModItems.COPPER_DUST)
                 .requires(ModItems.GOLD_DUST)
                 .requires(ModItems.GOLD_DUST)
                 .requires(ModItems.GOLD_DUST)
                 .unlockedBy("has_gold", has(Tags.Items.INGOTS_COPPER)).save(output);
-
         shaped(RecipeCategory.TOOLS, ModBlocks.ROSE_GOLD_BLOCK.get())
                 .pattern("RRR")
                 .pattern("RRR")
@@ -71,62 +87,84 @@ public class ModRecipeProvider extends RecipeProvider {
         oreBlasting(output, List.of(ModItems.ROSE_GOLD_BLEND.get()),
                 RecipeCategory.TOOLS, ModItems.ROSE_GOLD.get(),
                 0.25f, 100,"rose_gold_smelt");
-
-        stonecutting(
-                RecipeCategory.TOOLS,
-                ModItems.IRON_DUST, Items.IRON_INGOT, 1, output);
-        stonecutting(
-                RecipeCategory.TOOLS,
-                ModItems.COPPER_DUST, Items.COPPER_INGOT, 1, output);
-        stonecutting(
-                RecipeCategory.TOOLS,
-                ModItems.GOLD_DUST, Items.GOLD_INGOT, 1, output);
-        stonecutting(
-                RecipeCategory.TOOLS,
-                ModItems.ROSE_GOLD_BLEND, ModItems.ROSE_GOLD, 1, output);
-
-        shaped(RecipeCategory.TOOLS, ModItems.ROSE_SWORD.get())
-                .pattern("R")
-                .pattern("R")
+        // Fluxed Metal Converting
+        shapeless(RecipeCategory.TOOLS, ModItems.FLUXED_BLEND.get(), 2)
+                .requires(ModItems.COPPER_DUST)
+                .requires(ModItems.COPPER_DUST)
+                .requires(Items.REDSTONE)
+                .requires(Items.REDSTONE)
+                .requires(Items.REDSTONE)
+                .requires(Items.REDSTONE)
+                .unlockedBy("has_redstone", has(Items.REDSTONE)).save(output);
+        shaped(RecipeCategory.TOOLS, ModBlocks.FLUXED_BLOCK.get())
+                .pattern("MMM")
+                .pattern("MMM")
+                .pattern("MMM")
+                .define('M', ModItems.FLUXED_INGOT.get())
+                .unlockedBy("has_fluxed_metal", has(ModItems.FLUXED_INGOT.get())).save(output);
+        shapeless(RecipeCategory.TOOLS, ModItems.ROSE_GOLD.get(),9)
+                .requires(ModBlocks.ROSE_GOLD_BLOCK)
+                .unlockedBy("has_fluxed_metal", has(ModItems.FLUXED_INGOT.get()))
+                .save(output, "flx_alloys:fluxed_ingot_from_block");
+        shaped(RecipeCategory.TOOLS, ModItems.FLUXED_INGOT.get())
+                .pattern("MMM")
+                .pattern("MMM")
+                .pattern("MMM")
+                .define('M', ModItems.FLUXED_NUGGET.get())
+                .unlockedBy("has_fluxed_metal", has(ModItems.FLUXED_INGOT.get()))
+                .save(output, "flx_alloys:fluxed_ingot_from_nuggets");
+        shapeless(RecipeCategory.TOOLS, ModItems.FLUXED_NUGGET.get(), 9)
+                .requires(ModItems.FLUXED_INGOT)
+                .unlockedBy("has_fluxed_metal", has(ModItems.FLUXED_INGOT.get())).save(output);
+        oreSmelting(output, List.of(ModItems.FLUXED_BLEND.get()),
+                RecipeCategory.TOOLS, ModItems.FLUXED_INGOT.get(),
+                0.25f, 200,"fluxed_metal_smelt");
+        oreBlasting(output, List.of(ModItems.FLUXED_BLEND.get()),
+                RecipeCategory.TOOLS, ModItems.FLUXED_INGOT.get(),
+                0.25f, 100,"fluxed_metal_smelt");
+        // Fluxed Tools
+        shaped(RecipeCategory.TOOLS, ModItems.FLUXED_SWORD.get())
+                .pattern("M")
+                .pattern("M")
                 .pattern("/")
-                .define('R', ModItems.ROSE_GOLD.get())
+                .define('M', ModItems.FLUXED_INGOT.get())
                 .define('/', Items.STICK)
-                .unlockedBy("has_rose_gold", has(ModItems.ROSE_GOLD.get())).save(output);
-        shaped(RecipeCategory.TOOLS, ModItems.ROSE_PICKAXE.get())
-                .pattern("RRR")
+                .unlockedBy("has_fluxed_metal", has(ModItems.FLUXED_INGOT.get())).save(output);
+        shaped(RecipeCategory.TOOLS, ModItems.FLUXED_PICKAXE.get())
+                .pattern("MMM")
                 .pattern(" / ")
                 .pattern(" / ")
-                .define('R', ModItems.ROSE_GOLD.get())
+                .define('M', ModItems.FLUXED_INGOT.get())
                 .define('/', Items.STICK)
-                .unlockedBy("has_rose_gold", has(ModItems.ROSE_GOLD.get())).save(output);
+                .unlockedBy("has_fluxed_metal", has(ModItems.FLUXED_INGOT.get())).save(output);
         shaped(RecipeCategory.TOOLS, ModItems.ROSE_AXE.get())
-                .pattern("RR")
-                .pattern("R/")
+                .pattern("MM")
+                .pattern("M/")
                 .pattern(" /")
-                .define('R', ModItems.ROSE_GOLD.get())
+                .define('M', ModItems.FLUXED_INGOT.get())
                 .define('/', Items.STICK)
-                .unlockedBy("has_rose_gold", has(ModItems.ROSE_GOLD.get())).save(output);
+                .unlockedBy("has_fluxed_metal", has(ModItems.FLUXED_INGOT.get())).save(output);
         shaped(RecipeCategory.TOOLS, ModItems.ROSE_SHOVEL.get())
-                .pattern("R")
+                .pattern("M")
                 .pattern("/")
                 .pattern("/")
-                .define('R', ModItems.ROSE_GOLD.get())
+                .define('M', ModItems.FLUXED_INGOT.get())
                 .define('/', Items.STICK)
-                .unlockedBy("has_rose_gold", has(ModItems.ROSE_GOLD.get())).save(output);
+                .unlockedBy("has_fluxed_metal", has(ModItems.FLUXED_INGOT.get())).save(output);
         shaped(RecipeCategory.TOOLS, ModItems.ROSE_HOE.get())
-                .pattern("RR")
+                .pattern("MM")
                 .pattern(" /")
                 .pattern(" /")
-                .define('R', ModItems.ROSE_GOLD.get())
+                .define('M', ModItems.FLUXED_INGOT.get())
                 .define('/', Items.STICK)
-                .unlockedBy("has_rose_gold", has(ModItems.ROSE_GOLD.get())).save(output);
+                .unlockedBy("has_fluxed_metal", has(ModItems.FLUXED_INGOT.get())).save(output);
         shaped(RecipeCategory.TOOLS, ModItems.ROSE_SPEAR.get())
-                .pattern("  R")
+                .pattern("  M")
                 .pattern(" / ")
                 .pattern("/  ")
-                .define('R', ModItems.ROSE_GOLD.get())
+                .define('M', ModItems.FLUXED_INGOT.get())
                 .define('/', Items.STICK)
-                .unlockedBy("has_rose_gold", has(ModItems.ROSE_GOLD.get())).save(output);
+                .unlockedBy("has_fluxed_metal", has(ModItems.FLUXED_INGOT.get())).save(output);
 
     }
 

@@ -12,6 +12,8 @@ public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> NEEDS_ROSE_TOOL = createTag("needs_rose_tool");
         public static final TagKey<Block> INCORRECT_FOR_ROSE_TOOL = createTag("incorrect_for_rose_tool");
+        public static final TagKey<Block> NEEDS_FLUXED_TOOL = createTag("needs_fluxed_tool");
+        public static final TagKey<Block> INCORRECT_FOR_FLUXED_TOOL = createTag("incorrect_for_fluxed_tool");
 
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(Identifier.fromNamespaceAndPath(Alloyed.MOD_ID, name));
@@ -20,6 +22,7 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> ROSE_REPAIRABLE = createTag("rose_gold_repairable");
+        public static final TagKey<Item> FLUXED_REPAIRABLE = createTag("rose_fluxed_repairable");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(Identifier.fromNamespaceAndPath(Alloyed.MOD_ID, name));

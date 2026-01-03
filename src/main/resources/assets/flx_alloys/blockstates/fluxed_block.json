@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "flx_alloys:block/fluxed_block"
+    }
+  }
+}

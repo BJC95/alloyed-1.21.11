@@ -22,12 +22,18 @@ public class ModModelProvider extends ModelProvider {
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         /* Items */
-        itemModels.generateFlatItem(ModItems.ROSE_GOLD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.ROSE_GOLD_NUGGET.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.ROSE_GOLD_BLEND.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.GOLD_DUST.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.IRON_DUST.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.COPPER_DUST.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(ModItems.ROSE_GOLD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ROSE_GOLD_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ROSE_GOLD_BLEND.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(ModItems.FLUXED_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.FLUXED_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.FLUXED_BLEND.get(), ModelTemplates.FLAT_ITEM);
+
         /* Tools */
         itemModels.generateFlatItem(ModItems.ROSE_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.ROSE_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
@@ -35,12 +41,20 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.ROSE_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.ROSE_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateSpear(ModItems.ROSE_SPEAR.get());
+
+        itemModels.generateFlatItem(ModItems.FLUXED_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.FLUXED_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.FLUXED_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.FLUXED_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.FLUXED_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateSpear(ModItems.FLUXED_SPEAR.get());
         /* Blocks */
         blockModels.createTrivialCube(ModBlocks.ROSE_GOLD_BLOCK.get());
     }
+
     @Override
     protected Stream<? extends Holder<Block>> getKnownBlocks() {
-        return ModBlocks.BLOCKS.getEntries().stream();
+        return ModBlocks.BLOCKS.getEntries().stream().filter(x -> !x.is(ModBlocks.FLUXED_BLOCK));
     }
     @Override
     protected Stream<? extends Holder<Item>> getKnownItems() {
